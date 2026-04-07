@@ -242,8 +242,34 @@ m = m / 20
 print(m)
 
 # 7) ((1, 2), (3, 4)) listindən/vectorundan df1 adlı dataframe yaradın
+
+a = ((1, 2), (3, 4))
+df1 = pd.DataFrame(a)
+print(df1)
+
 # 8) df1-ə ('r1', 'r2') sətir və ('c1', 'c2') sütun adlarını təyin edin
+
+df1.index = ['r1', 'r2']
+df1.columns = ['c1', 'c2']
+print(df1)
+
 # 9) Python: {'A': [1, 2], 'B': [3, 4]} dictionary-dən df2 yaradın
 #     R: list(A = c(1, 2), B = c(3, 4)) listindən df2 yaradın 
+
+a = {'A': [1, 2], 'B': [3, 4]}
+df2 = pd.DataFrame(a)
+print(df2)
+
 # 10) df2-dən 'r1' sətrini seçin
+
+# df2 de r1 sətri yoxdu ona görə 2 şans:
+# 1: df1 de r1 sətri var onu işlədək 
+print(df1.loc['r1'])
+
+#2: df2 de r1 sətri yaradırıq
+df2.index = ['r1', 'r2']
+print(df2.loc['r1'])
+
 # 11) df2-də 'A' sütunu 1-dən böyük olan sətirləri seçin
+
+print(df2.loc[df2['A'] > 1])
