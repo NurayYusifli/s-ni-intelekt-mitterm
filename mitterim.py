@@ -174,13 +174,28 @@ print(n == 19)
 # 9) "a", "b", "a", "c" listində/vectorunda "a" elementinin neçə dəfə təkrarlandığını tapın
 
 list =["a", "b", "a", "c"]
-a = list.index('a')
-a = list.
+a = list.count('a')
 print(a)
 
 # 10) "x", "y", "x", "z" listindən/vectorundan "x" elementlərini silin
+
+list =["x", "y", "x", "z"]
+list.remove('x')
+list.remove('x')
+print(list)
+
 # 11) 7, 2, 9, 1 listini/vectorunu azalan sırayla sıralayın
+
+a = [7, 2, 9, 1]
+a.sort()
+a.reverse()
+print(a)
+
 # 12) “rəqəmlər” listindən/vectorundan 10-dan böyük elementləri seçin
+print(num)
+for i in num:
+    if i > 10:
+        print(i)
 
 
 
@@ -189,8 +204,26 @@ print(a)
 
 
 # 1) 10, 20, 30, 40 elementlərindən ibarət s1 adlı series/vector yaradın
+
+s1 ={10, 20, 30, 40}
+print(s1)
+
 # 2) s1-ə 'w', 'x', 'y', 'z' indekslərini təyin edin
+
+s1 = {'w', 'x', 'y', 'z'}
+a = 0
+for i in s1:
+    print(f'{i} indexsi: {a}')
+    a += 1 
+
+
 # 3) Python: {'p': 5, 'q': 10, 'r': 15} dictionary-dən s2 adlı Series yaradın
+
+import pandas as pd
+Python = {'p': 5, 'q': 10, 'r': 15}
+s2 = pd.Series(Python)
+print(s2)
+
 #     R: list(p = 5, q = 10, r = 15) listindən v2 adlı named vektor yaradın
 # 4) s2-dən 'q' indeksli elementi seçin
 # 5) s1-dən 25-dən böyük elementləri seçin
