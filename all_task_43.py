@@ -48,9 +48,9 @@ print(a)
 
 # 8) qiymet = 75.5 yaradın. Onu tam ədədə çevirin və tipini yoxlayın.
 
-a = 75.5
-a = int(a)
-print(type(a))
+qiymet = 75.5
+qiymet = int(qiymet)
+print(type(qiymet))
 
 
 # 9) n = 20 yaradın. (n > 10) or (n < 5) və (n > 15) and (n < 25) şərtlərini yoxlayın, nəticələri çap edin.
@@ -133,22 +133,22 @@ print(s.replace("-", " "))
 
 # 1) 5, 10, 15, 20 rəqəmlərindən ibarət “rəqəmlər” adlı list/vector yaradın
 
-num = [5, 10, 15, 20]
-print(num)
+rəqəmlər = [5, 10, 15, 20]
+print(rəqəmlər)
 
 # 2) “rəqəmlər” listinin/vectorunun uzunluğunu tapın
 
-print(len(num))
+print(len(rəqəmlər))
 
 # 3) “rəqəmlər” listinə/vectoruna 25 elementini əlavə edin
 
-num.append(25)
-print(num)
+rəqəmlər.append(25)
+print(rəqəmlər)
 
 # 4) “rəqəmlər” listinin/vectorunun 2-ci indeksinə 12 elementini əlavə edin
 
-num.insert(1,12)
-print(num)
+rəqəmlər.insert(1,12)
+print(rəqəmlər)
 
 
 # 5) 1, 2, 3 və 4, 5, 6 listlərini/vectorlarını birləşdirin
@@ -159,16 +159,16 @@ print(list_1 + list_2)
 
 # 6) “rəqəmlər” listindən/vectorundan 2-ci və 3-cü elementləri seçin
 
-print(num[1:3])
+print(rəqəmlər[1:3])
 
 # 7) “rəqəmlər” listinin/vectorunun ilk elementini 50 ilə əvəz edin 
 
-num[0] = 50
-print(num)
+rəqəmlər[0] = 50
+print(rəqəmlər)
 
 # 8) “rəqəmlər” listində/vectorunda 19 elementinin olub-olmadığını yoxlayın
 
-n = len(num)
+n = len(rəqəmlər)
 print(n == 19)
 
 # 9) "a", "b", "a", "c" listində/vectorunda "a" elementinin neçə dəfə təkrarlandığını tapın
@@ -192,8 +192,9 @@ a.reverse()
 print(a)
 
 # 12) “rəqəmlər” listindən/vectorundan 10-dan böyük elementləri seçin
-print(num)
-for i in num:
+
+print(rəqəmlər)
+for i in rəqəmlər:
     if i > 10:
         print(i)
 
@@ -205,29 +206,41 @@ for i in num:
 
 # 1) 10, 20, 30, 40 elementlərindən ibarət s1 adlı series/vector yaradın
 
-s1 ={10, 20, 30, 40}
+import pandas as pd
+s1 = pd.Series([10, 20, 30, 40])
 print(s1)
 
 # 2) s1-ə 'w', 'x', 'y', 'z' indekslərini təyin edin
 
-s1 = {'w', 'x', 'y', 'z'}
-a = 0
-for i in s1:
-    print(f'{i} indexsi: {a}')
-    a += 1 
+s1.index =['w', 'x', 'y', 'z']
+print(s1)
 
 
 # 3) Python: {'p': 5, 'q': 10, 'r': 15} dictionary-dən s2 adlı Series yaradın
 
-import pandas as pd
-Python = {'p': 5, 'q': 10, 'r': 15}
-s2 = pd.Series(Python)
+a = {'p': 5, 'q': 10, 'r': 15}
+s2 = pd.Series(a)
 print(s2)
 
-#     R: list(p = 5, q = 10, r = 15) listindən v2 adlı named vektor yaradın
+# R: list(p = 5, q = 10, r = 15) listindən v2 adlı named vektor yaradın
+
+
+
 # 4) s2-dən 'q' indeksli elementi seçin
+n = s2['q']
+print(n)
+
 # 5) s1-dən 25-dən böyük elementləri seçin
+
+n = s1[s1 > 25]
+print(n)
+
 # 6) s1-də 20-dən böyük elementləri 10-a bölün 
+
+m = s1[s1 > 20]
+m = m / 20
+print(m)
+
 # 7) ((1, 2), (3, 4)) listindən/vectorundan df1 adlı dataframe yaradın
 # 8) df1-ə ('r1', 'r2') sətir və ('c1', 'c2') sütun adlarını təyin edin
 # 9) Python: {'A': [1, 2], 'B': [3, 4]} dictionary-dən df2 yaradın
